@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="UTF-8">
+<title>ボリューム検討 — 名古屋市緑区砂田2丁目1008番</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+@page {
+  size: A4 portrait;
+  margin: 18mm 20mm 18mm 20mm;
+  @top-left {
+    content: "名古屋市緑区砂田二丁目1008番 ／ 事業用地 ご検討資料";
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  @top-right {
+    content: "ボリューム検討";
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-size: 9pt;
+    color: #6b7280;
+  }
+  @bottom-left {
+    content: "la CASA ｜ 不動産部 ｜ 2026/05/20 作成";
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-size: 8pt;
+    color: #6b7280;
+  }
+  @bottom-center {
+    content: counter(page) " / " counter(pages);
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-size: 8pt;
+    color: #6b7280;
+  }
+  @bottom-right {
+    content: "";
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-size: 8pt;
+    color: #6b7280;
+  }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans JP','Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic',sans-serif;
+  color: #1a1a1a; background: #f0f2f7;
+  font-size: 11px; line-height: 1.55;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.page { max-width: 820px; margin: 0 auto; padding: 24px; }
+
+/* ナビバー */
+.nav-bar { position:sticky; top:0; background:#1a1a1a; color:#fff; padding:12px 20px; z-index:1000; box-shadow:0 3px 12px rgba(0,0,0,0.25); display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; border-bottom:2px solid #fff; }
+.nav-bar-title { font-size:13px; font-weight:700; letter-spacing:0.03em; color:#fff; flex-shrink:0; }
+.nav-tabs { display:flex; gap:6px; flex-wrap:wrap; }
+.nav-tab { padding:10px 22px; background:#2a2a2a; color:#fff; text-decoration:none; border-radius:6px; font-size:13px; font-weight:700; border:1.5px solid #fff; cursor:pointer; transition:all 0.18s; letter-spacing:0.02em; box-shadow:0 1px 4px rgba(0,0,0,0.4); }
+.nav-tab:hover { background:rgba(255,255,255,0.18); color:#fff; transform:translateY(-1px); box-shadow:0 4px 12px rgba(255,255,255,0.2); }
+.nav-tab.active { background:#fff; color:#1a1a1a; border-color:#fff; box-shadow:0 2px 10px rgba(255,255,255,0.35); }
+.nav-pdf { background:transparent; color:#fff; border:1.5px solid #fff; padding:10px 22px; border-radius:6px; font-size:13px; font-weight:700; cursor:pointer; flex-shrink:0; transition:all 0.18s; }
+.nav-pdf:hover { background:#fff; color:#1a1a1a; transform:translateY(-1px); box-shadow:0 3px 10px rgba(255,255,255,0.3); }
+
+/* カードヘッダー */
+.card-header { background: linear-gradient(135deg,#1a1a1a,#333); color: #fff; padding: 16px 24px; border-radius: 12px 12px 0 0; display: flex; justify-content: space-between; align-items: center; }
+.card-header h1 { font-size: 16px; font-weight: 900; }
+.card-header .sub { font-size: 10px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+.header-badge { background: #fff; color: #1a1a1a; padding: 4px 12px; border-radius: 4px; font-size: 9px; font-weight: 700; }
+
+.card-body { background: #fff; border-radius: 0 0 12px 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+.section { padding: 14px 24px; border-bottom: 1px solid #f1f5f9; }
+.section:last-child { border-bottom: none; }
+.section-title { font-size: 12.5px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.section-title::before { content: ''; display: inline-block; width: 3px; height: 14px; background: #1a1a1a; border-radius: 2px; }
+.section-title .en { color: #999; font-size: 9px; font-weight: 400; margin-left: 10px; letter-spacing: 0.2em; }
+
+/* 前提条件 */
+.prem { background: #f8fafc; border: 1px solid #e0e4e8; border-radius: 6px; padding: 10px 14px; font-size: 10.5px; line-height: 1.7; }
+.prem b { color: #1a1a1a; font-weight: 700; }
+.prem-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 8px; }
+.prem-cell { background: #fff; border: 1px solid #e0e4e8; border-radius: 4px; padding: 6px 8px; }
+.prem-cell .lbl { font-size: 8px; color: #6b7280; font-weight: 600; letter-spacing: 0.04em; }
+.prem-cell .val { font-size: 11px; font-weight: 700; color: #1a1a1a; margin-top: 2px; }
+
+/* 2案グリッド */
+.plan-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 10px; }
+.plan { border: 1px solid #e0e4e8; border-radius: 8px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
+.plan-head { background: #1a1a1a; color: #fff; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; }
+.plan-head h3 { font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em; }
+.plan-head .badge-rec { background: #fff; color: #1a1a1a; font-size: 8.5px; font-weight: 900; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.06em; }
+
+.svg-wrap { padding: 10px; background: #fafafa; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: center; }
+.svg-wrap svg { width: 100%; height: auto; max-width: 240px; }
+.svg-wrap-double { padding: 8px; background: #fafafa; border-bottom: 1px solid #f1f5f9; display: flex; flex-direction: column; gap: 6px; align-items: center; }
+.svg-wrap-double svg { width: 100%; height: auto; max-width: 240px; }
+.svg-floor-label { font-size: 9px; font-weight: 700; color: #1a1a1a; letter-spacing: 0.04em; align-self: flex-start; padding-left: 4px; }
+
+.plan-body { padding: 10px 12px; flex: 1; }
+.kpi { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 8px; }
+.kpi-cell { background: #fafafa; border: 1px solid #e0e4e8; border-radius: 4px; padding: 5px 8px; }
+.kpi-cell .lbl { font-size: 8.5px; color: #6b7280; font-weight: 600; }
+.kpi-cell .val { font-size: 13.5px; font-weight: 900; color: #1a1a1a; margin-top: 1px; }
+
+.plan-body h5 { font-size: 10px; font-weight: 700; margin: 6px 0 3px; letter-spacing: 0.04em; }
+.plan-body h5.plus { color: #1a1a1a; }
+.plan-body h5.minus { color: #6b7280; }
+.plan-body ul { list-style: none; }
+.plan-body ul li { font-size: 10px; padding: 2px 0 2px 12px; position: relative; line-height: 1.55; }
+.plan-body ul.plus li::before { content: ''; position: absolute; left: 0; top: 9px; width: 7px; height: 1.5px; background: #1a1a1a; }
+.plan-body ul.minus li::before { content: ''; position: absolute; left: 0; top: 9px; width: 7px; height: 1.5px; background: #d1d5db; }
+
+/* SVG共通 — svg-wrap / svg-wrap-double 両方に適用 */
+.svg-wrap svg text, .svg-wrap-double svg text { font-family: 'Noto Sans JP',sans-serif; font-size: 7px; fill: #1a1a1a; }
+.svg-wrap svg text.label-white, .svg-wrap-double svg text.label-white { fill: #fff; font-weight: 700; }
+.svg-wrap svg text.label-mono, .svg-wrap-double svg text.label-mono { fill: #1a1a1a; font-weight: 700; }
+.svg-wrap svg text.note, .svg-wrap-double svg text.note { fill: #6b7280; font-size: 6px; }
+.svg-wrap svg text.dim, .svg-wrap-double svg text.dim { fill: #1a1a1a; font-size: 6px; font-weight: 600; }
+.svg-wrap svg text.entry, .svg-wrap-double svg text.entry { fill: #1a1a1a; font-size: 7px; font-weight: 700; }
+
+.svg-wrap svg .road, .svg-wrap-double svg .road { fill: #e5e5e5; }
+.svg-wrap svg .sidewalk, .svg-wrap-double svg .sidewalk { fill: #f0f0f0; }
+.svg-wrap svg .pedestrian, .svg-wrap-double svg .pedestrian { fill: #eee; }
+.svg-wrap svg .site-bg, .svg-wrap-double svg .site-bg { fill: #fff; }
+.svg-wrap svg .site-edge, .svg-wrap-double svg .site-edge { fill: none; stroke: #1a1a1a; stroke-width: 1.2; }
+.svg-wrap svg .building, .svg-wrap-double svg .building { fill: #1a1a1a; }
+.svg-wrap svg .parking, .svg-wrap-double svg .parking { fill: #fff; stroke: #1a1a1a; stroke-width: 0.5; }
+.svg-wrap svg .driveway, .svg-wrap-double svg .driveway { fill: #f8fafc; stroke: #1a1a1a; stroke-width: 0.4; stroke-dasharray: 1.5 1; }
+.svg-wrap svg .entry-mark, .svg-wrap-double svg .entry-mark { fill: #1a1a1a; }
+.svg-wrap svg .dim-line, .svg-wrap-double svg .dim-line { stroke: #1a1a1a; stroke-width: 0.4; fill: none; }
+
+/* 比較表 */
+table.tb { width: 100%; border-collapse: collapse; font-size: 10.5px; margin-top: 6px; }
+table.tb th { background: #1a1a1a; color: #fff; padding: 6px 8px; text-align: left; font-weight: 700; font-size: 10px; }
+table.tb td { padding: 6px 8px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+table.tb td.num { font-variant-numeric: tabular-nums; text-align: right; font-weight: 700; }
+table.tb td.c { text-align: center; }
+table.tb tr:last-child td { border-bottom: none; }
+
+.info-box { background: #f0f9ff; border-left: 3px solid #1a1a1a; padding: 8px 12px; margin-top: 8px; font-size: 10.5px; line-height: 1.65; }
+.alert-box { background: #fafafa; border-left: 3px solid #1a1a1a; padding: 10px 12px; margin-top: 8px; font-size: 10.5px; line-height: 1.65; }
+.alert-box strong { color: #1a1a1a; font-weight: 700; }
+
+.conclusion { background: #1a1a1a; color: #fff; padding: 14px 18px; border-radius: 8px; margin-top: 10px; font-size: 10.5px; line-height: 1.75; }
+.conclusion h3 { font-size: 11px; font-weight: 900; color: #fff; margin-bottom: 6px; letter-spacing: 0.06em; }
+.conclusion .ln { display: block; padding: 2px 0; }
+.conclusion b { color: #fff; }
+
+.footer { text-align: center; padding: 12px 24px; font-size: 9px; color: #94a3b8; }
+
+@media print {
+  .nav-bar { display: none !important; }
+  body { background: #fff; font-size: 10.5px; line-height: 1.7; padding: 0; margin: 0; }
+  .page { padding: 0 8mm; max-width: 100%; margin: 0; }
+  .card-body { box-shadow: none; border-radius: 0; padding: 0; }
+  .card-header { display: none; }
+  .section { padding: 10px 0; border-bottom: 1px solid #e5e5e5; }
+  .section-title { page-break-after: avoid; margin-bottom: 8px; }
+  .info-box, .alert-box, .conclusion { padding: 10px 14px; margin-top: 8px; line-height: 1.75; }
+  .prem { padding: 12px 14px; }
+  table { margin-top: 6px; }
+  table th, table td { padding: 6px 10px; }
+  .plan, table, tr, .info-box, .alert-box, .conclusion, .prem, .prem-grid, .svg-wrap, .svg-wrap-double { page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  .footer { display: none; }
+}
+
+/* === 上詰めパック（PDF/印刷のみ・2026-06-02） 地図/画像/行は保持 === */
+@media print {
+  @page { margin: 10mm 12mm; }
+  body { font-size: 10px; line-height: 1.5; }
+  .section { padding: 5px 0; }
+  .info-box, .alert-box, .summary-box, .priority-card, .role-card,
+  .pc-grid, table, .card, .sec, .note, .area-card, .facility-list { page-break-inside: auto; }
+  tr, thead, img, figure, .map, .map-wrap, .ba-slider, .photo { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <div class="nav-bar-title">名古屋市緑区砂田二丁目1008番 ／ 事業用地 ご検討資料</div>
+  <nav class="nav-tabs">
+    <a href="07_物件概要書_配布版_2026-07-20.html" class="nav-tab">物件概要書</a>
+    <a href="01_ファクトシート_配布版_2026-07-20.html" class="nav-tab">ファクトシート</a>
+    <a href="02_周辺環境調査_配布版_2026-07-20.html" class="nav-tab">周辺環境</a>
+    <a href="03_用途検討とメリデメ_配布版_2026-07-20.html" class="nav-tab">用途検討</a>
+    <a href="04_クリニック配置プラン_配布版_2026-07-20.html" class="nav-tab active">ボリューム検討</a>
+    <a href="06_用途・ターゲット適性_配布版_2026-07-20.html" class="nav-tab">用途・ターゲット適性</a>
+  </nav>
+  <button class="nav-pdf" onclick="window.print()">PDF保存</button>
+</div>
+
+<div class="page">
+
+<div class="card-header">
+  <div>
+    <h1>名古屋市緑区砂田二丁目1008番 貸地｜ボリューム検討</h1>
+    <div class="sub">愛知県名古屋市緑区砂田二丁目｜912㎡（275.88坪）｜2026/05/20 作成</div>
+  </div>
+  <div class="header-badge">ボリューム検討</div>
+</div>
+
+<div class="card-body">
+
+<!-- 1. 前提条件 -->
+<div class="section">
+  <div class="section-title">1. 前提条件<span class="en">ASSUMPTIONS</span></div>
+  <div class="prem">
+    <b>敷地：</b>912㎡（275.88坪）／<b>南側間口 22.07m</b>・奥行 約41.3m／<b>南西角に隅切り 3.1m</b>（西側自歩道×南側市道）<br>
+    <b>接道：</b>二方接道（南＝市道 平手南部第10号線・幅員11.97〜12.02m・車両用／西＝市道 平手南部自転車歩行者道第7号線・4.00m・車両不可）<br>
+    <b>車両乗入：</b>南面市道のみ。<strong>進入経路に駐車マスを置かず、進入路と転回スペースを必ず確保</strong>（出入口から最初の駐車マスまで6m以上）<br>
+    <b>建物前提：</b>用途により200〜340㎡／<b>駐車場前提：</b>1台2.5m×5.0m（直角駐車：通路含めて25〜30㎡/台）／患者15・スタッフ5・医師1 = 目標21台
+  </div>
+  <div class="prem-grid">
+    <div class="prem-cell"><div class="lbl">敷地面積</div><div class="val">912㎡</div></div>
+    <div class="prem-cell"><div class="lbl">南側間口</div><div class="val">22.07m</div></div>
+    <div class="prem-cell"><div class="lbl">南西隅切り</div><div class="val">3.1m</div></div>
+    <div class="prem-cell"><div class="lbl">建ぺい上限</div><div class="val">547㎡</div></div>
+  </div>
+</div>
+
+<!-- 2. 配置2案 -->
+<div class="section">
+  <div class="section-title">2. ボリューム検討3案（南面市道から進入・進入経路に駐車マス無し）<span class="en">3 SCHEMES</span></div>
+  <div class="plan-grid">
+
+    <!-- 案A 建物東寄せ・西側1列駐車 -->
+    <div class="plan">
+      <div class="plan-head">
+        <h3>案A. 建物東寄せ／西側1列駐車</h3>
+        <span class="badge-rec">小型クリニック・サ高住向き</span>
+      </div>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 230 410" xmlns="http://www.w3.org/2000/svg">
+          <!-- 西側自歩道 -->
+          <rect class="pedestrian" x="0" y="0" width="20" height="370"/>
+          <text class="note" x="10" y="180" text-anchor="middle" transform="rotate(-90,10,180)">西 自歩道（車両不可）</text>
+          <!-- 南面市道 -->
+          <rect class="road" x="0" y="380" width="230" height="30"/>
+          <text class="note" x="125" y="402" text-anchor="middle">南面市道（幅員約12m）</text>
+          <rect class="sidewalk" x="20" y="370" width="210" height="10"/>
+          <!-- 敷地（南西隅切り反映） -->
+          <polygon class="site-bg" points="20,0 230,0 230,370 48,370 20,342"/>
+          <polygon class="site-edge" points="20,0 230,0 230,370 48,370 20,342"/>
+          <!-- 寸法（間口22.07m） -->
+          <line class="dim-line" x1="48" y1="358" x2="230" y2="358"/>
+          <text class="dim" x="139" y="354" text-anchor="middle">間口 22.07m</text>
+
+          <!-- 建物（東寄せ） -->
+          <rect class="building" x="126" y="15" width="99" height="280"/>
+          <text class="label-white" x="175" y="140" text-anchor="middle">クリニック</text>
+          <text class="label-white" x="175" y="154" text-anchor="middle">平屋 約280㎡</text>
+          <text class="label-white" x="175" y="170" text-anchor="middle" font-size="6" opacity="0.75">東面配置</text>
+
+          <!-- 患者入口（建物西面） -->
+          <circle class="entry-mark" cx="126" cy="180" r="3"/>
+          <text class="entry" x="116" y="183" text-anchor="end" font-size="6.5">患者入口</text>
+
+          <!-- 西側1列駐車（直角・西向き） -->
+          <g>
+            <rect class="parking" x="24" y="15" width="50" height="22"/>
+            <rect class="parking" x="24" y="40" width="50" height="22"/>
+            <rect class="parking" x="24" y="65" width="50" height="22"/>
+            <rect class="parking" x="24" y="90" width="50" height="22"/>
+            <rect class="parking" x="24" y="115" width="50" height="22"/>
+            <rect class="parking" x="24" y="140" width="50" height="22"/>
+            <rect class="parking" x="24" y="165" width="50" height="22"/>
+            <rect class="parking" x="24" y="190" width="50" height="22"/>
+            <rect class="parking" x="24" y="215" width="50" height="22"/>
+            <rect class="parking" x="24" y="240" width="50" height="22"/>
+            <rect class="parking" x="24" y="265" width="50" height="22"/>
+            <text class="note" x="49" y="305" text-anchor="middle" font-size="6">西側1列 11台</text>
+          </g>
+
+          <!-- 中央車路（南北） -->
+          <rect class="driveway" x="74" y="15" width="52" height="280"/>
+          <text class="note" x="100" y="160" text-anchor="middle" transform="rotate(-90,100,160)" font-size="6">中央車路 5m</text>
+
+          <!-- 南面進入・転回スペース -->
+          <rect class="driveway" x="74" y="295" width="151" height="65"/>
+          <text class="note" x="150" y="333" text-anchor="middle" font-size="6">進入・転回スペース</text>
+
+          <!-- 出入口（隅切り回避・東寄り） -->
+          <polygon class="entry-mark" points="115,370 175,370 175,365 115,365" opacity="0.9"/>
+          <text class="entry" x="145" y="362" text-anchor="middle" font-size="6">入／出（隅切り回避）</text>
+
+          <!-- 方位 -->
+          <text x="218" y="14" text-anchor="end" font-size="6" fill="#6b7280">N ↑</text>
+        </svg>
+      </div>
+      <div class="plan-body">
+        <div class="kpi">
+          <div class="kpi-cell"><div class="lbl">駐車</div><div class="val">約11台</div></div>
+          <div class="kpi-cell"><div class="lbl">建物</div><div class="val">約280㎡</div></div>
+        </div>
+        <h5 class="plus">長所</h5>
+        <ul class="plus">
+          <li>建物東面配置で<b>南面市道からの建物視認◎</b></li>
+          <li><b>進入経路に駐車マス無し</b> → 確実に駐車可能</li>
+          <li>西側1列＋中央車路で<b>シンプルな車動線</b></li>
+          <li>西人道から徒歩患者の安全アプローチ</li>
+          <li>建物280㎡＝<b>小型クリニック・通所介護・サ高住に最適</b></li>
+        </ul>
+        <h5 class="minus">短所</h5>
+        <ul class="minus">
+          <li>駐車約11台 → 患者多数科目（小児・耳鼻）には不足</li>
+          <li>建物縦長で<b>設計コスト やや上昇</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 案B 建物北寄せ・西東2列駐車 -->
+    <div class="plan">
+      <div class="plan-head">
+        <h3>案B. 建物北寄せ／西東2列駐車</h3>
+        <span class="badge-rec">標準クリニック向き</span>
+      </div>
+      <div class="svg-wrap">
+        <svg viewBox="0 0 230 410" xmlns="http://www.w3.org/2000/svg">
+          <!-- 西側自歩道 -->
+          <rect class="pedestrian" x="0" y="0" width="20" height="370"/>
+          <text class="note" x="10" y="180" text-anchor="middle" transform="rotate(-90,10,180)">西 自歩道（車両不可）</text>
+          <!-- 南面市道 -->
+          <rect class="road" x="0" y="380" width="230" height="30"/>
+          <text class="note" x="125" y="402" text-anchor="middle">南面市道（幅員約12m）</text>
+          <rect class="sidewalk" x="20" y="370" width="210" height="10"/>
+          <!-- 敷地（南西隅切り反映） -->
+          <polygon class="site-bg" points="20,0 230,0 230,370 48,370 20,342"/>
+          <polygon class="site-edge" points="20,0 230,0 230,370 48,370 20,342"/>
+          <!-- 寸法（間口22.07m） -->
+          <line class="dim-line" x1="48" y1="358" x2="230" y2="358"/>
+          <text class="dim" x="139" y="354" text-anchor="middle">間口 22.07m</text>
+
+          <!-- 建物（北寄せ） -->
+          <rect class="building" x="22" y="15" width="206" height="120"/>
+          <text class="label-white" x="125" y="60" text-anchor="middle">クリニック</text>
+          <text class="label-white" x="125" y="76" text-anchor="middle">平屋 約330㎡</text>
+          <text class="label-white" x="125" y="92" text-anchor="middle" font-size="6" opacity="0.75">北面配置</text>
+
+          <!-- 患者入口（建物南面中央） -->
+          <circle class="entry-mark" cx="125" cy="140" r="3"/>
+          <text class="entry" x="125" y="152" text-anchor="middle" font-size="6.5">患者入口</text>
+
+          <!-- 西列駐車（直角・西向き） -->
+          <g>
+            <rect class="parking" x="24" y="160" width="50" height="22"/>
+            <rect class="parking" x="24" y="185" width="50" height="22"/>
+            <rect class="parking" x="24" y="210" width="50" height="22"/>
+            <rect class="parking" x="24" y="235" width="50" height="22"/>
+            <rect class="parking" x="24" y="260" width="50" height="22"/>
+            <rect class="parking" x="24" y="285" width="50" height="22"/>
+            <rect class="parking" x="24" y="310" width="50" height="22"/>
+            <text class="note" x="49" y="349" text-anchor="middle" font-size="6">西列 7台</text>
+          </g>
+
+          <!-- 中央車路（南北） -->
+          <rect class="driveway" x="74" y="160" width="82" height="200"/>
+          <text class="note" x="115" y="260" text-anchor="middle" transform="rotate(-90,115,260)" font-size="6">中央車路 8m（進入・転回兼用）</text>
+
+          <!-- 東列駐車（直角・東向き） -->
+          <g>
+            <rect class="parking" x="156" y="160" width="50" height="22"/>
+            <rect class="parking" x="156" y="185" width="50" height="22"/>
+            <rect class="parking" x="156" y="210" width="50" height="22"/>
+            <rect class="parking" x="156" y="235" width="50" height="22"/>
+            <rect class="parking" x="156" y="260" width="50" height="22"/>
+            <rect class="parking" x="156" y="285" width="50" height="22"/>
+            <rect class="parking" x="156" y="310" width="50" height="22"/>
+            <text class="note" x="181" y="349" text-anchor="middle" font-size="6">東列 7台</text>
+          </g>
+
+          <!-- 出入口（中央・隅切り回避） -->
+          <polygon class="entry-mark" points="85,370 145,370 145,365 85,365" opacity="0.9"/>
+          <text class="entry" x="115" y="362" text-anchor="middle" font-size="6">入／出（中央車路へ）</text>
+
+          <!-- 方位 -->
+          <text x="218" y="14" text-anchor="end" font-size="6" fill="#6b7280">N ↑</text>
+        </svg>
+      </div>
+      <div class="plan-body">
+        <div class="kpi">
+          <div class="kpi-cell"><div class="lbl">駐車</div><div class="val">約14台</div></div>
+          <div class="kpi-cell"><div class="lbl">建物</div><div class="val">約330㎡</div></div>
+        </div>
+        <h5 class="plus">長所</h5>
+        <ul class="plus">
+          <li>建物が間口いっぱい＝<b>南面視認性◎</b></li>
+          <li><b>進入経路に駐車マス無し</b> → 確実に駐車可能</li>
+          <li>西東2列＋中央車路で<b>動線が明快</b></li>
+          <li>患者入口は建物南面中央でアクセス短い</li>
+          <li>建物330㎡＝<b>標準クリニック・複数診察室に対応</b></li>
+        </ul>
+        <h5 class="minus">短所</h5>
+        <ul class="minus">
+          <li>駐車約14台 → 患者多数科目には<b>やや不足</b></li>
+          <li>建物が北寄せ＝<b>南面盛土の処理</b>必須</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 案C 建物北寄せ＋1階屋内ガレージ＋2階受付 -->
+    <div class="plan">
+      <div class="plan-head">
+        <h3>案C. 建物北寄せ／1階ガレージ＋2階受付</h3>
+        <span class="badge-rec" style="background:#fff; color:#1a1a1a;">推奨</span>
+      </div>
+      <div class="svg-wrap-double">
+        <div class="svg-floor-label">1階 — 建物（北寄せ）＋屋外駐車（南側）</div>
+        <svg viewBox="0 0 230 410" xmlns="http://www.w3.org/2000/svg">
+          <!-- 西側自歩道 -->
+          <rect class="pedestrian" x="0" y="0" width="20" height="370"/>
+          <text class="note" x="10" y="180" text-anchor="middle" transform="rotate(-90,10,180)" font-size="5.5">西 自歩道</text>
+          <!-- 南面市道 -->
+          <rect class="road" x="0" y="380" width="230" height="30"/>
+          <text class="note" x="125" y="402" text-anchor="middle">南面市道（幅員約12m）</text>
+          <rect class="sidewalk" x="20" y="370" width="210" height="10"/>
+          <!-- 敷地枠（南西隅切り反映） -->
+          <polygon class="site-bg" points="20,0 230,0 230,370 48,370 20,342"/>
+          <polygon class="site-edge" points="20,0 230,0 230,370 48,370 20,342"/>
+          <!-- 寸法 -->
+          <line class="dim-line" x1="48" y1="358" x2="230" y2="358"/>
+          <text class="dim" x="139" y="354" text-anchor="middle">間口 22.07m</text>
+
+          <!-- 建物外周（北寄せ・1階ピロティ） -->
+          <rect x="22" y="10" width="206" height="195" fill="#fafafa" stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="4 2"/>
+          <text class="dim" x="125" y="22" text-anchor="middle" font-size="6.5" fill="#1a1a1a" font-weight="700">建物 1階／屋内ガレージ（ピロティ）</text>
+          <text class="dim" x="125" y="31" text-anchor="middle" font-size="5" fill="#6b7280">建物外形 約22m×19.5m＝430㎡</text>
+
+          <!-- 屋内 西列 7台 -->
+          <g>
+            <rect class="parking" x="26" y="38" width="50" height="22"/>
+            <rect class="parking" x="26" y="60" width="50" height="22"/>
+            <rect class="parking" x="26" y="82" width="50" height="22"/>
+            <rect class="parking" x="26" y="104" width="50" height="22"/>
+            <rect class="parking" x="26" y="126" width="50" height="22"/>
+            <rect class="parking" x="26" y="148" width="50" height="22"/>
+            <rect class="parking" x="26" y="170" width="50" height="22"/>
+            <text class="note" x="51" y="200" text-anchor="middle" font-size="5.5">屋内 西列 7台</text>
+          </g>
+
+          <!-- 中央車路（屋内・南北・進入兼用） -->
+          <rect class="driveway" x="76" y="38" width="78" height="160"/>
+          <text class="note" x="115" y="120" text-anchor="middle" transform="rotate(-90,115,120)" font-size="5.5">屋内 中央車路</text>
+
+          <!-- 屋内 東列 7台 -->
+          <g>
+            <rect class="parking" x="154" y="38" width="50" height="22"/>
+            <rect class="parking" x="154" y="60" width="50" height="22"/>
+            <rect class="parking" x="154" y="82" width="50" height="22"/>
+            <rect class="parking" x="154" y="104" width="50" height="22"/>
+            <rect class="parking" x="154" y="126" width="50" height="22"/>
+            <rect class="parking" x="154" y="148" width="50" height="22"/>
+            <rect class="parking" x="154" y="170" width="50" height="22"/>
+            <text class="note" x="179" y="200" text-anchor="middle" font-size="5.5">屋内 東列 7台</text>
+          </g>
+
+          <!-- EV/階段（東端北側） -->
+          <rect x="204" y="38" width="22" height="50" fill="#1a1a1a"/>
+          <text x="215" y="55" text-anchor="middle" font-size="5" fill="#fff" font-weight="700">EV</text>
+          <text x="215" y="68" text-anchor="middle" font-size="5" fill="#fff" font-weight="700">階段</text>
+
+          <!-- 建物南面ガレージ入口 -->
+          <rect x="115" y="200" width="113" height="5" fill="#1a1a1a"/>
+          <text class="note" x="172" y="214" text-anchor="middle" font-size="5.5" font-weight="700">↑ ガレージ入口（東寄り）</text>
+
+          <!-- 屋外駐車エリア（建物の南） -->
+          <text class="dim" x="125" y="232" text-anchor="middle" font-size="6.5" font-weight="700">屋外駐車エリア（敷地南側）</text>
+
+          <!-- 屋外 西列駐車 6台 -->
+          <g>
+            <rect class="parking" x="26" y="240" width="22" height="48"/>
+            <rect class="parking" x="48" y="240" width="22" height="48"/>
+            <rect class="parking" x="70" y="240" width="22" height="48"/>
+            <rect class="parking" x="92" y="240" width="22" height="48"/>
+            <rect class="parking" x="114" y="240" width="22" height="48"/>
+            <rect class="parking" x="136" y="240" width="22" height="48"/>
+            <text class="note" x="81" y="304" text-anchor="middle" font-size="5.5">屋外 西側 6台</text>
+          </g>
+
+          <!-- 進入路・転回スペース（東側） -->
+          <rect class="driveway" x="158" y="240" width="70" height="120"/>
+          <text class="note" x="193" y="290" text-anchor="middle" font-size="5.5">進入路</text>
+          <text class="note" x="193" y="302" text-anchor="middle" font-size="5.5">転回スペース</text>
+
+          <!-- 出入口（東寄り・隅切り回避） -->
+          <polygon class="entry-mark" points="135,370 200,370 200,365 135,365" opacity="0.9"/>
+          <text class="entry" x="168" y="362" text-anchor="middle" font-size="5.5">入／出（隅切り回避）</text>
+
+          <!-- 方位 -->
+          <text x="218" y="14" text-anchor="end" font-size="6" fill="#6b7280">N ↑</text>
+        </svg>
+
+        <div class="svg-floor-label">2階 — 受付・診療フロア（建物北寄せ・約430㎡）</div>
+        <svg viewBox="0 0 230 220" xmlns="http://www.w3.org/2000/svg">
+          <!-- 敷地枠（参考表示） -->
+          <polygon class="site-bg" points="20,0 230,0 230,200 50,200 20,180" opacity="0.3"/>
+          <!-- 2階建物 -->
+          <rect class="building" x="22" y="10" width="206" height="195"/>
+          <text class="label-white" x="125" y="26" text-anchor="middle" font-size="7" font-weight="700">建物 2階 ／ 約430㎡</text>
+          <!-- 待合・受付エリア -->
+          <rect x="26" y="38" width="100" height="55" fill="#fafafa" stroke="#fff" stroke-width="0.5"/>
+          <text class="label-mono" x="76" y="63" text-anchor="middle" font-size="6.5" font-weight="700">待合・受付</text>
+          <text class="note" x="76" y="76" text-anchor="middle" font-size="5">エレベーター降車</text>
+          <text class="note" x="76" y="84" text-anchor="middle" font-size="5">→ 受付カウンター</text>
+          <!-- 診察室1 -->
+          <rect x="130" y="38" width="46" height="40" fill="#fafafa" stroke="#fff" stroke-width="0.5"/>
+          <text class="label-mono" x="153" y="60" text-anchor="middle" font-size="6">診察1</text>
+          <!-- 診察室2 -->
+          <rect x="180" y="38" width="46" height="40" fill="#fafafa" stroke="#fff" stroke-width="0.5"/>
+          <text class="label-mono" x="203" y="60" text-anchor="middle" font-size="6">診察2</text>
+          <!-- 処置室 -->
+          <rect x="130" y="82" width="96" height="40" fill="#fafafa" stroke="#fff" stroke-width="0.5"/>
+          <text class="label-mono" x="178" y="104" text-anchor="middle" font-size="6">処置室／レントゲン</text>
+          <!-- スタッフルーム -->
+          <rect x="26" y="100" width="100" height="40" fill="#fafafa" stroke="#fff" stroke-width="0.5"/>
+          <text class="label-mono" x="76" y="122" text-anchor="middle" font-size="6">スタッフ／医師ルーム</text>
+          <!-- トイレ -->
+          <rect x="26" y="148" width="50" height="35" fill="#fafafa" stroke="#fff" stroke-width="0.5"/>
+          <text class="label-mono" x="51" y="168" text-anchor="middle" font-size="6">トイレ</text>
+          <!-- 給湯/倉庫 -->
+          <rect x="80" y="148" width="60" height="35" fill="#fafafa" stroke="#fff" stroke-width="0.5"/>
+          <text class="label-mono" x="110" y="168" text-anchor="middle" font-size="6">給湯／倉庫</text>
+          <!-- EV/階段（1階と同位置・東端北側） -->
+          <rect x="204" y="128" width="22" height="55" fill="#fff"/>
+          <text x="215" y="148" text-anchor="middle" font-size="5" fill="#1a1a1a" font-weight="700">EV</text>
+          <text x="215" y="160" text-anchor="middle" font-size="5" fill="#1a1a1a" font-weight="700">階段</text>
+          <text class="note" x="125" y="195" text-anchor="middle" font-size="5" fill="#fff" opacity="0.7">EV／階段で1階ガレージへ接続</text>
+        </svg>
+      </div>
+      <div class="plan-body">
+        <div class="kpi">
+          <div class="kpi-cell"><div class="lbl">駐車合計</div><div class="val">約20台</div></div>
+          <div class="kpi-cell"><div class="lbl">2F診療</div><div class="val">約430㎡</div></div>
+        </div>
+        <div class="alert-box" style="margin-top:4px; padding:6px 10px; font-size:9.5px;">
+          <strong>内訳:</strong> 建物1階屋内ガレージ <b>14台</b>（西7＋東7）／屋外駐車（敷地南側） <b>6台</b>
+        </div>
+        <h5 class="plus">長所</h5>
+        <ul class="plus">
+          <li><b>建物は北寄せ</b> → 南道路からの車両進入動線を確保</li>
+          <li>建物1階を屋内ガレージ化で<b>雨天・夏冬の患者導線が快適</b></li>
+          <li>屋外+屋内で<b>合計約20台</b>（案A11台・案B14台より多）</li>
+          <li>2階に診療フロア集約で<b>約430㎡規模</b>＝複数科目・医療モール対応可</li>
+          <li>南面の屋外駐車エリアは<b>来客優先・西人道側からのアクセスも◎</b></li>
+        </ul>
+        <h5 class="minus">短所</h5>
+        <ul class="minus">
+          <li>2階建てで<b>建築コスト上昇</b>（平屋比 約1.4倍）</li>
+          <li><b>エレベーター必須</b>（バリアフリー法対応）</li>
+          <li>屋内ガレージ天井高は乗用車対応（2.3m以上）必須</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 3. 比較表 -->
+<div class="section">
+  <div class="section-title">3. 3案比較サマリー<span class="en">SUMMARY</span></div>
+  <table class="tb">
+    <tr><th style="width:18%;">項目</th><th>案A 建物東寄せ／西側1列</th><th>案B 建物北寄せ／西東2列</th><th>案C 1階ガレージ／2階受付</th></tr>
+    <tr><td>駐車台数</td><td class="num">約 11 台</td><td class="num">約 14 台</td><td class="num"><b>約 22 台</b></td></tr>
+    <tr><td>建物面積</td><td class="num">280㎡（平屋）</td><td class="num">330㎡（平屋）</td><td class="num"><b>2階 500㎡</b><br>延床 1,000㎡前後</td></tr>
+    <tr><td>建物階数</td><td class="c">1階建</td><td class="c">1階建</td><td class="c"><b>2階建（ピロティ）</b></td></tr>
+    <tr><td>車両動線</td><td class="c">中央車路（5m）→ 西側1列</td><td class="c">中央車路（8m）→ 西東2列</td><td class="c">中央車路（6m）→ 屋内ガレージ</td></tr>
+    <tr><td>進入経路の駐車マス</td><td class="c"><b>無し ◎</b></td><td class="c"><b>無し ◎</b></td><td class="c"><b>無し ◎</b></td></tr>
+    <tr><td>目標21台</td><td class="c">×（−10台）</td><td class="c">×（−7台）</td><td class="c"><b>◎ クリア</b></td></tr>
+    <tr><td>建物視認性</td><td class="c">★★★</td><td class="c">★★★</td><td class="c"><b>★★★★（敷地全面・2階建）</b></td></tr>
+    <tr><td>適合用途</td><td>通所介護・サ高住・少患者科目</td><td>標準クリニック・複数診察室</td><td><b>医療モール・複数科目・標準クリニック</b></td></tr>
+    <tr><td>建築コスト</td><td class="c">標準</td><td class="c">標準</td><td class="c"><b>標準 × 約1.4倍</b></td></tr>
+    <tr><td>患者導線（雨天）</td><td class="c">屋外</td><td class="c">屋外</td><td class="c"><b>屋内ガレージ→EV→受付</b></td></tr>
+  </table>
+</div>
+
+<!-- 4. 共通留意点 -->
+<div class="section">
+  <div class="section-title">4. 共通留意点<span class="en">REMARKS</span></div>
+  <div class="alert-box">
+    <strong>① 進入経路に駐車マスを置かない：</strong>南面出入口から最初の駐車マスまで<strong>6m以上の進入路</strong>を確保。進入直近に駐車マスを置くと切返し不可で駐車できない。<br>
+    <strong>② 車両乗入は南面市道のみ：</strong>西側は自転車歩行者専用道路で車両不可。<br>
+    <strong>③ 南西角の隅切り3.1m：</strong>歩道切下げ位置は隅切り部分を避け、<strong>東寄り（隅切りから離れた位置）に設定</strong>。所轄警察協議で視認性根拠を整理。<br>
+    <strong>④ 駐車場出入口の歩道切下げ：</strong>所轄警察協議（道路占用）が必要。<br>
+    <strong>⑤ 盛土処理（道路面より1〜2m高）：</strong>活かす（地盤レベル保持）／切土（道路面合わせ）で建築コスト・進入路勾配（5%以下）が大きく変動。<br>
+    <strong>⑥ 西人道：</strong>歩行患者・自転車来院者の安全アプローチ路として活用可（小児・高齢者にやさしい立地）。
+  </div>
+</div>
+
+<!-- 5. 結論 -->
+<div class="section">
+  <div class="section-title">5. 結論<span class="en">CONCLUSION</span></div>
+  <div class="conclusion">
+    <h3>CONCLUSION</h3>
+    <span class="ln">● 進入経路に駐車マスを置かない実務原則のもと、<b>3案いずれも確実に駐車可能</b>。台数11〜22台。</span>
+    <span class="ln">● <b>本命は案C（1階屋内ガレージ＋2階受付・約22台）</b>。目標21台クリア＋雨天動線快適＋医療モール対応。建築コストは平屋比1.4倍だが、地代許容度の高い医療系誘致先には吸収可能。</span>
+    <span class="ln">● サブ案：</span>
+    <span class="ln">　・<b>案A（建物東寄せ・約11台）</b>：通所介護・サ高住・専門クリニック（眼科・皮膚科・心療内科等の少患者数科目）に最適。建築コスト最小。</span>
+    <span class="ln">　・<b>案B（建物北寄せ・約14台）</b>：標準クリニック・複数診察室の整形外科・耳鼻咽喉科に対応。</span>
+    <span class="ln">● サ高住・通所介護への流用時は、本3案を基に<b>居室配置・送迎車寄せ動線</b>に再設計が必要。</span>
+    <span class="ln">● <b>本配置は概念検討</b>。実敷地寸法（南西隅切り・盛土）反映後の最終プランは建築設計士・所轄警察・建築指導課と協議の上、確定。</span>
+  </div>
+</div>
+
+</div><!-- card-body -->
+
+<div class="footer">la CASA ｜ 不動産部 ｜ 2026/05/20 作成 ｜ 事業用地検討資料</div>
+
+</div><!-- page -->
+<!-- lacasa-close-button:v1 自動挿入: 案件一覧(#lcback)から開いた制作物を閉じて一覧に戻る -->
+<style>#lcCloseBtn{display:none}@media print{#lcCloseBtn{display:none!important}}</style>
+<button type="button" id="lcCloseBtn" aria-label="このタブを閉じて一覧に戻る" title="閉じて一覧に戻る"
+ onclick="window.close();setTimeout(function(){if(!window.closed&&history.length>1)history.back();},150);"
+ style="position:fixed;top:14px;left:14px;z-index:99999;background:#fff;color:#2a2a2a;border:1px solid #b9b9b9;border-radius:24px;font:700 13px/1 -apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;padding:9px 14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25);" onmouseover="this.style.background='#f2f2f2'" onmouseout="this.style.background='#fff'">✕ 閉じる</button>
+<script>if(location.hash.indexOf('lcback')>=0){var _b=document.getElementById('lcCloseBtn');if(_b)_b.style.display='block';}</script>
+</body>
+</html>
